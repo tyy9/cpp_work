@@ -75,8 +75,10 @@ int CheckStudentRecord()
                 }
             }
             //判断是否有连续迟到
-            else if(record.at(i)=='L')
+            if(record.at(i)=='L')
             {   
+                //cout<<"1"<<endl;
+                L_Flag++;
                 if(L_Flag>2){
                     cout<<"该学生连续迟到两次，不及格"<<endl;
                    break;
