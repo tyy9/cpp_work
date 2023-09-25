@@ -12,17 +12,18 @@ string input_data;
 void init_data()
 {
     FILE *fp = fopen("file", "r");
-    char buf[2024];
+    char buf[2048];
     string str_buf;
     while (!feof(fp))
     {
         bzero(buf, sizeof(buf));
         str_buf.clear();
-        fgets(buf, 2024, fp);
+        fgets(buf, 2048, fp);
         // 获取键值与对应的汉字
         char *key = strtok(buf, "=>");
         char *value = strtok(NULL, "=>");
-        str_buf = value;
+        //str_buf = value;
+        str_buf.append(value);
         // 去除',','\n',与""
         str_buf.erase(str_buf.find_last_of(","));
         str_buf.erase(0, 1);

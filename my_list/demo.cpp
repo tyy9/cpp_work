@@ -38,6 +38,9 @@ bool del(const T &n)
         return false;
     }
 }
+bool test(const char&x2,const char&x1){
+    cout<<"x1:"<<x1<<"\tx2:"<<x2<<endl;
+}
 int main()
 {
 #if 0
@@ -64,9 +67,10 @@ int main()
     list<char> char_list;  
     char s[]="hello";
     char_list.assign(s,s+sizeof(s));
-    char_list.remove_if(del<char>);
-    for(char c:char_list){
-        cout<<c<<endl;
-    }
+    // char_list.remove_if(del<char>);
+    // for(char c:char_list){
+    //     cout<<c<<endl;
+    // }
+    char_list.sort(test);
 #endif
 }
